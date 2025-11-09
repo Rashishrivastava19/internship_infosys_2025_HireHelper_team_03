@@ -17,10 +17,9 @@ const navItems = [
 return (
 <div className="sidebar">
 <div className="logo-section">
-<h1>HireHelper</h1>
+<h1 style={{ display: 'flex', alignItems: 'center', gap: '8px',fontSize:'24px',fontWeight:'600px' }}>
+                <MdAccountBalance size={32} style={{marginRight:'0',fontSize:'32px'}} />HireHelper</h1>
 </div>
-
-
 <nav className="nav-menu">
 {navItems.map((item, index) => (
 <a key={index} href="#" onClick={(e) => { e.preventDefault(); onNavigate(item.state); }} className={`nav-item ${item.state === currentView ? 'active' : ''}`}>
