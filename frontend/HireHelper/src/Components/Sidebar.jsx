@@ -1,5 +1,5 @@
 import React from 'react';
-import { MdAccountCircle, MdDashboard, MdList, MdSettings, MdHelp, MdPeople, MdMail, MdAdd } from 'react-icons/md';
+import { MdAccountCircle, MdDashboard, MdList, MdSettings, MdHelp, MdPeople, MdMail, MdAdd,MdAccountBalance } from 'react-icons/md';
 
 
 const Sidebar = ({ currentView, onNavigate }) => {
