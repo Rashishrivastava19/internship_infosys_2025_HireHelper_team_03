@@ -61,9 +61,9 @@ return (
 <div className="quick-actions-section">
 <h2>Quick Actions</h2>
 <button className="action-button primary-action" onClick={() => onNavigate('addtask')}>+ Post New Task</button>
-<button className="action-button">Browse Tasks</button>
-<button className="action-button">Messages</button>
-<button className="action-button">Notifications</button>
+<button className="action-button"onClick={() => onNavigate('mytasks')}>Browse Tasks</button>
+<button className="action-button"onClick={() => onNavigate('myrequests')}>Messages</button>
+<button className="action-button"onClick={() => onNavigate('notifications')}>Notifications</button>
 </div>
 </section>
 </div>
