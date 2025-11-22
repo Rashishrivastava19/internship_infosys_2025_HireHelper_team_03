@@ -1,11 +1,7 @@
-/*
- * File: App.css
- * Description: Global styles and component-specific styling for the HireHelper application.
- * Theme: Strictly Black, White, and Grayscale for a professional, minimal look.
- */
+
 
 :root {
-  /* --- Color Variables (Grayscale Palette) --- */
+  
   --color-black: #000000;
   --color-white: #ffffff;
   --color-gray-darkest: #333333;
@@ -18,7 +14,7 @@
   --panel-background: var(--color-black); 
   --text-on-dark: var(--color-white); 
   --text-on-light: var(--color-gray-darkest);
-  --primary-accent: var(--color-black); /* Accent color set to black for buttons/focus */
+  --primary-accent: var(--color-black); 
   --secondary-accent: var(--color-gray-dark);
   --dashboard-bg: var(--color-gray-lighter);
   --border-color: var(--color-gray-light);
@@ -97,7 +93,7 @@ button:focus {
 .feature-card {
   padding: 20px;
   border-radius: 4px;
-  background-color: rgba(255, 255, 255, 0.05); /* Very subtle background */
+  background-color: rgba(255, 255, 255, 0.05); 
   border: 1px solid rgba(255, 255, 255, 0.1); 
 }
 
@@ -321,7 +317,7 @@ cursor: pointer;
 }
 
 .sidebar {
-  width: 300px; /* Slimmer sidebar */
+  width: 300px; 
   min-width: 200px;
   height: 100vh;
   display: flex;
@@ -330,7 +326,7 @@ cursor: pointer;
   border-right: 1px solid var(--border-color);
   padding: 20px 0;
   box-shadow: 1px 0 3px rgba(0, 0, 0, 0.05);
-  color: var(--text-on-dark); /* Ensure text is visible on black sidebar */
+  color: var(--text-on-dark); 
   position: fixed;
   top: 0;
   left: 0;
@@ -345,7 +341,7 @@ cursor: pointer;
 
 .sidebar h2 {
   font-size: 1.5em;
-    color: var(--color-white); /* Changed to white for black background */
+    color: var(--color-white); 
 }
 
 .nav-menu {
@@ -366,7 +362,7 @@ cursor: pointer;
   align-items: center;
   padding: 10px 15px;
   margin: 5px 0;
-  color: var(--color-gray-medium); /* Lighter gray for navigation on black */
+  color: var(--color-gray-medium); 
   text-decoration: none;
   border-radius: 4px;
   transition: background-color 0.3s, color 0.3s;
@@ -451,7 +447,7 @@ cursor: pointer;
   padding: 20px;
   border-radius: 4px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  border-left: 4px solid var(--color-gray-medium); /* Subtle gray accent */
+  border-left: 4px solid var(--color-gray-medium);
   position: relative;
 }
 
@@ -505,12 +501,12 @@ cursor: pointer;
   border-radius: 4px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   margin-bottom: 15px;
-  cursor: pointer; /* Indicate clickability */
+  cursor: pointer; 
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .task-item:hover {
-    transform: translateY(-2px); /* Slight lift */
+    transform: translateY(-2px); 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -589,7 +585,7 @@ cursor: pointer;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Dark, semi-transparent backdrop */
+    background-color: rgba(0, 0, 0, 0.8); 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -609,7 +605,7 @@ cursor: pointer;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     /* Transition for the 'zoom-out' (scale) effect */
     transform: scale(1);
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Zoom-in elastic effect */
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
 }
 
 /* A class to apply for 'closing' animation (optional, but good practice) */
@@ -736,7 +732,7 @@ body {
 /* Assuming Sidebar component uses the styling for the left navigation */
 .sidebar {
     width: 250px;
-    background-color:black; /* Dark background */
+    background-color:black; 
     color: #fff;
     padding-top: 20px;
     box-shadow: 2px 0 5px rgba(0,0,0,0.1);
@@ -774,7 +770,7 @@ body {
 .sidebar li:first-child {
     background-color: #fff;
     color: #333;
-    border-left: 5px solid #007bff; /* Example highlight color */
+    border-left: 5px solid #007bff; 
 }
 
 .sidebar svg {
@@ -825,7 +821,7 @@ body {
 }
 
 .logout-button {
-    background-color: #dc3545; /* Red color for log out */
+    background-color: #dc3545; 
     color: white;
     border: none;
     padding: 8px 15px;
@@ -886,7 +882,7 @@ body {
 .task-trend {
     font-size: 0.9em;
     font-style: italic;
-    color: #32CD32; /* Green for positive trend, adjust as needed */
+    color: #32CD32; 
 }
 
 
@@ -926,7 +922,7 @@ body {
 
 .task-item:hover {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    border-left-color: #007bff; /* Hover visual feedback */
+    border-left-color: #007bff; 
 }
 
 .task-header {
@@ -951,8 +947,8 @@ body {
 }
 
 /* Status Colors */
-.task-status.in-progress { background-color: #f0ad4e; } /* Orange/Yellow for In Progress */
-.task-status.open { background-color: #5cb85c; }       /* Green for Open */
+.task-status.in-progress { background-color: #f0ad4e; }
+.task-status.open { background-color: #5cb85c; }       
 
 .task-details {
     color: #666;
@@ -982,7 +978,7 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    height: fit-content; /* Ensure it doesn't stretch too much */
+    height: fit-content;
 }
 
 .action-button {
@@ -1006,11 +1002,11 @@ body {
 
 /* Primary Action Button (Post New Task) */
 .action-button.primary-action {
-    background-color: #333; /* Dark background like the image */
+    background-color: #333; 
     color: white;
     border-color: #333;
     font-weight: bold;
-    margin-bottom: 20px; /* Extra space after the primary button */
+    margin-bottom: 20px; 
 }
 
 .action-button.primary-action:hover {
@@ -1028,7 +1024,7 @@ body {
     .sidebar {
         width: 100%;
         min-width: 100%;
-        display: flex; /* Change to flex for horizontal layout on small screens */
+        display: flex; 
         justify-content: space-between;
         align-items: center;
         padding: 10px 20px;
@@ -1051,7 +1047,7 @@ body {
     }
     
     .search-bar {
-        flex-grow: 1; /* Make search bar take available space */
+        flex-grow: 1; 
     }
 
     /* Modal responsiveness */
@@ -1161,8 +1157,8 @@ body {
 
 .my-tasks-container {
     flex-grow: 1;
-    padding: 30px 40px; /* Spacing around the content */
-    background-color: #f4f4f9; /* Light grey background for the main area */
+    padding: 30px 40px; 
+    background-color: #f4f4f9; 
     font-family: Arial, sans-serif;
 }
 
@@ -1181,13 +1177,13 @@ body {
 .my-tasks-tabs {
     border-bottom: 1px solid #ddd;
     margin-bottom: 25px;
-    display: flex; /* Using flexbox for tab alignment */
+    display: flex; 
     gap: 15px;
 }
 
 .my-tasks-tabs button {
     background: none;
-    border: 1px solid #ccc; /* Border around the button as seen in the image */
+    border: 1px solid #ccc; 
     padding: 8px 12px;
     cursor: pointer;
     font-size: 0.9em;
@@ -1227,8 +1223,8 @@ body {
     background-color: #fff;
     padding: 20px 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Soft shadow */
-    border-top: 1px solid #eee; /* Subtle top border for clean separation */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); 
+    border-top: 1px solid #eee; 
 }
 
 .task-header-meta {
@@ -1269,9 +1265,9 @@ body {
     text-align: center;
 }
 
-.task-status.active { background-color: #5cb85c; }       /* Green for Active */
-.task-status.in-progress { background-color: #f0ad4e; } /* Orange/Yellow for In Progress */
-.task-status.completed { background-color: #4682B4; }     /* Blue for Completed */
+.task-status.active { background-color: #5cb85c; }       
+.task-status.in-progress { background-color: #f0ad4e; } 
+.task-status.completed { background-color: #4682B4; }     
 
 .task-posted {
     color: #999;
@@ -1290,8 +1286,8 @@ body {
     display: flex;
     align-items: center;
     gap: 15px;
-    padding-top: 15px; /* Add padding to separate from description */
-    border-top: 1px dotted #eee; /* Subtle divider for the bottom section */
+    padding-top: 15px; 
+    border-top: 1px dotted #eee; 
 }
 
 .interested-count, .assigned-helper {
@@ -1323,7 +1319,7 @@ body {
     background-color: #555;
 }
 
-/* For the "// NEW // NEW //" line visible in the image */
+
 .task-list > p {
     text-align: center;
     color: #ccc;
@@ -1341,20 +1337,12 @@ body {
 
 .user-profile {
     padding: 15px 20px;
-    border-top: 1px solid #444; /* Separator line */
+    border-top: 1px solid #444; 
     display: flex;
     align-items: center;
     gap: 10px;
-    /* Ensure no extra margin pushes it up */
     margin-top: 0; 
 }
-/*  RequestsPage */
-
-/*
- * File: RequestsPage.css
- * Description: Clean, modern layout for the Requests page.
- * Style matches "My Tasks" cards.
- */
 
 /* ---- Page Container ---- */
 .requests-page {
@@ -1460,7 +1448,7 @@ body {
   color: #111827;
 }
 
-/* Subtle meta info line (📅 and 📍) */
+
 .request-card p:last-of-type {
   color: #6b7280;
   font-size: 0.9em;
@@ -1547,7 +1535,7 @@ body {
 }
 
 .accept-btn {
-  background-color: #030714; /* blue */
+  background-color: #030714; 
   color: white;
 }
 
@@ -1556,7 +1544,7 @@ body {
 }
 
 .decline-btn {
-  background-color: #f3f4f6; /* light gray */
+  background-color: #f3f4f6; 
   color: #111827;
 }
 
