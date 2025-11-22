@@ -24,10 +24,12 @@ const App = () => {
   const handleNavigation = (state) => setAppState(state);
   const handleAuthenticationComplete = () => setAppState("otp");
   const handleVerificationSuccess = () => setAppState("dashboard");
+
   const handleBackToLogin = () => {
     setAppState("login");
     setActiveTab("signin");
   };
+
   const handleLogout = () => {
     setAppState("login");
     setActiveTab("signin");
@@ -49,8 +51,7 @@ const App = () => {
       case "myrequests":
       case "addtask":
       case "settings":
-      case "help":  
-        
+      case "help":
         return (
           <div className="dashboard-layout">
             <Dashboard
@@ -59,14 +60,21 @@ const App = () => {
               appState={appState}
               overrideMain={() => (
                 <div className="main-content">
-                  {/* Header (Topbar) appears on all pages except Dashboard */}
+                  
+                  {/* HEADER SHOWN FOR ALL PAGES EXCEPT DASHBOARD */}
                   <header className="dashboard-header">
-                    <Header onLogout={handleLogout} showWelcome={false} />
+                    <Header
+                      onLogout={handleLogout}
+                      showWelcome={false}
+                      currentView={appState}   // pass navigation state to Header
+                    />
                   </header>
 
-                  {/* Conditional Page Rendering */}
+                  {/* CONDITIONAL PAGE RENDERING */}
                   {appState === "mytasks" && <MyTasksPage />}
-                  {appState === "requests" && <RequestsPage onNavigate={handleNavigation} />}
+                  {appState === "requests" && (
+                    <RequestsPage onNavigate={handleNavigation} />
+                  )}
                   {appState === "myrequests" && <MyRequestsPage />}
                   {appState === "addtask" && <AddTaskPage />}
                   {appState === "settings" && <SettingsPage />}
@@ -106,3 +114,4 @@ const App = () => {
 };
 
 export default App;
+

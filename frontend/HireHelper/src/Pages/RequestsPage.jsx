@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { MdNotificationsNone } from "react-icons/md";
 
+const API_BASE_URL = "http://localhost:5000/api"; // 👈 backend base URL
+
 const initialRequests = [
   {
     id: 1,
@@ -29,17 +31,53 @@ const RequestsPage = ({ onNavigate }) => {
   const [requests, setRequests] = useState(initialRequests);
 
   // ---- Accept Request ----
-  const handleAccept = (id) => {
+  const handleAccept = async (id) => {
     console.log(`Accepted request with id: ${id}`);
-    // ✅ Navigate to My Requests page instead of My Tasks
-    if (onNavigate) onNavigate("myrequests");
+
+    const requestToAccept = requests.find((req) => req.id === id);
+
+    try {
+      // 👉 BACKEND TEAM:
+      // Implement POST /api/task-requests/:id/accept
+      // Body can contain helper / task info if needed.
+      await fetch(`${API_BASE_URL}/task-requests/${id}/accept`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(requestToAccept),
+      });
+
+      // Remove from local list
+      setRequests((prev) => prev.filter((req) => req.id !== id));
+
+      // Navigate to My Requests page
+      if (onNavigate) onNavigate("myrequests");
+    } catch (error) {
+      console.error("Error while accepting request:", error);
+      alert("accepting this request.");
+    }
   };
 
   // ---- Decline Request ----
-  const handleDecline = (id) => {
+  const handleDecline = async (id) => {
     console.log(`Declined request with id: ${id}`);
-    // Remove from local list (no backend)
-    setRequests((prev) => prev.filter((req) => req.id !== id));
+
+    const requestToDecline = requests.find((req) => req.id === id);
+
+    try {
+      // 👉 BACKEND TEAM:
+      // Implement POST /api/task-requests/:id/decline
+      await fetch(`${API_BASE_URL}/task-requests/${id}/decline`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(requestToDecline),
+      });
+
+      // Remove from local list
+      setRequests((prev) => prev.filter((req) => req.id !== id));
+    } catch (error) {
+      console.error("Error while declining request:", error);
+      alert("Something went wrong while declining this request.");
+    }
   };
 
   return (
@@ -47,17 +85,8 @@ const RequestsPage = ({ onNavigate }) => {
       {/* ---- Page Header ---- */}
       <div className="page-header">
         <div className="header-left">
-          <h1>Requests</h1>
+          <h2> Incoming Requests</h2>
           <p>People who want to help with your tasks</p>
-        </div>
-
-        <div className="header-right">
-          <input
-            type="text"
-            placeholder="Search tasks..."
-            className="search-bar"
-          />
-          <MdNotificationsNone className="notification-icon" />
         </div>
       </div>
 

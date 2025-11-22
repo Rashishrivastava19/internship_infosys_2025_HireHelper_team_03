@@ -1068,6 +1068,88 @@ body {
     }
     
 }
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* or flex-start */
+  gap: 32px; /* space between Dashboard and Welcome */
+}
+
+/* ------------------ Rquests to help button-----------------*/
+.request-help-btn {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  background: #111827;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.request-help-btn:hover {
+  opacity: 0.9;
+}
+
+/* Simple modal styles */
+.request-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.request-modal {
+  background: #ffffff;
+  padding: 20px 24px;
+  border-radius: 12px;
+  width: 420px;
+  max-width: 90%;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.25);
+}
+
+.request-modal-label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #374151;
+}
+
+.request-modal-textarea {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  padding: 8px 10px;
+  font-size: 14px;
+  resize: vertical;
+}
+
+.request-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.cancel-btn {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.send-btn {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  background: #111827;
+  color: white;
+  cursor: pointer;
+}
+
 
 
 
@@ -1481,6 +1563,24 @@ body {
 .decline-btn:hover {
   background-color: #e5e7eb;
 }
+/* --- Requests Page Specific Styles --- */
+.requests-top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px 0; /* aligns with Dashboard title area */
+}
+
+.requests-top-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-gray-darkest);
+  margin: 0;
+}
+
+
+
+
 
 /* ================My RequestsPage================== */
 .my-requests-page {

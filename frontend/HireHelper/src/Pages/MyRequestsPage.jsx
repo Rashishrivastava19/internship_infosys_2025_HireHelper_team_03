@@ -12,7 +12,31 @@ const myRequestsData = [
       "I’d be happy to help with your move! I have experience with heavy lifting and can bring some moving equipment. Available Saturday afternoon as requested.",
     time: "Sent Jul 4, 10:00 AM",
     location: "Downtown Seattle, WA",
-    image: "/public/moving.jpg", // 👈 Make sure this exists in /public/images/
+    image: "/public/moving.jpg",
+  },
+  {
+    id: 2,
+    taskTitle: "Grocery Shopping Help",
+    category: "errands",
+    status: "Accepted",
+    taskOwner: "Emily Chen",
+    message:
+      "I can manage weekly grocery shopping and deliver everything to your doorstep.",
+    time: "Sent Jul 5, 3:15 PM",
+    location: "Capitol Hill, Seattle, WA",
+    image: "/public/grocery.jpg",   // if you don't have this, you can remove `image`
+  },
+  {
+    id: 3,
+    taskTitle: "Computer Setup Help",
+    category: "tech",
+    status: "Declined",
+    taskOwner: "Michael Lee",
+    message:
+      "I have IT experience and can help set up your new PC and software.",
+    time: "Sent Jul 6, 9:30 AM",
+    location: "Bellevue, WA",
+    // no image, will simply not render the image block
   },
 ];
 
@@ -23,15 +47,6 @@ const MyRequestsPage = () => (
       <div className="header-left">
         <h2>My Requests</h2>
         <p>Track the help requests you've sent</p>
-      </div>
-
-      <div className="header-right">
-        <input
-          type="text"
-          placeholder="Search tasks..."
-          className="search-bar"
-        />
-        <MdNotificationsNone className="notification-icon" />
       </div>
     </div>
 
@@ -64,7 +79,6 @@ const MyRequestsPage = () => (
             </p>
           </div>
 
-          {/* 👇 Image placed below footer, aligned left */}
           {request.image && (
             <div className="request-image-container">
               <img
